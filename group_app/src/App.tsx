@@ -33,6 +33,10 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import firebase from 'firebase/app';
+import {GetProcessEnv} from './react-app-env.d';
+
+export const app = firebase.initializeApp(GetProcessEnv());
 
 const App: React.FC = () => (
   <IonApp>
@@ -52,10 +56,6 @@ const App: React.FC = () => (
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon icon={ellipse} />
             <IonLabel>Tab 2</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
