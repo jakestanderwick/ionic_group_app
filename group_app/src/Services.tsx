@@ -19,6 +19,11 @@ const Services: React.FC<ServiceP> = ({doc}) => {
                     </IonText>
                     <IonText className="item-sub-title">
                         <div>
+                            {data.serviceType}
+                        </div>
+                    </IonText>
+                    <IonText className="item-sub-title">
+                        <div>
                             {data.description}
                         </div>
                     </IonText>

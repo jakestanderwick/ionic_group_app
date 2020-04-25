@@ -30,14 +30,10 @@ const Home: React.FC = () => {
       <IonContent>
         {
         <IonCard>
-          <IonCardHeader>
-            <h3>New Entry:</h3>
-          </IonCardHeader>
-            <AddService service={current} clear={()=>setCurrent(getEmpty())}/>
-          {}
+          <ServicesList doc={setCurrent}/>
         </IonCard>
         }
-        <ServicesList doc={setCurrent}/>
+        
       </IonContent>
     </IonPage>
   );
