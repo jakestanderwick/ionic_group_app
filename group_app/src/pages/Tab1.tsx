@@ -8,17 +8,7 @@ const Home: React.FC = () => {
 
   const [current, setCurrent] = useState(null);
 
-  const getEmpty = () => {
-    return({
-      title: '',
-      content: '',
-      date: '',
-      location: '',
-      picture: '',
-      clear: '',
-      initialValue: ''
-    });
-  }
+  
   return (
     <IonPage>
       <IonHeader>

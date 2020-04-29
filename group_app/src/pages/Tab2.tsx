@@ -32,10 +32,6 @@ const Tab2: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <IonCard>
-          <IonCardHeader>
-
-          </IonCardHeader>
-         
           <AddService service={current} clear={()=>setCurrent(getEmpty())}/>
         </IonCard>
       </IonContent>

@@ -2,7 +2,7 @@ import React from 'react';
 import Services from './Services';
 import firebase from 'firebase';
 import {useCollection} from "react-firebase-hooks/firestore";
-import {IonList} from '@ionic/react';
+import {IonList, IonCard, IonItem} from '@ionic/react';
 
 interface Props {
     doc:any
@@ -21,7 +21,11 @@ const ServiceList: React.FC<Props> = () => {
             {value && value.docs.map(doc => {
                 return(
                     !loading && (
-                        <Services doc={doc} key = {doc.id}/>
+                        <IonItem>
+                            <IonCard id="cardItem">
+                                <Services doc={doc} key = {doc.id}/>
+                            </IonCard>
+                        </IonItem>
                     )
                 );
             })}

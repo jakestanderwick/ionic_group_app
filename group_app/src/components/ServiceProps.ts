@@ -8,6 +8,7 @@ export default interface ServiceProps{
     state?: string;
     phone?: string;
     email?: string;
+
     other?: string;
     clear?: any;
 }

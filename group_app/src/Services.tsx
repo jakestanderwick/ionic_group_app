@@ -8,9 +8,15 @@ interface ServiceP {
 const Services: React.FC<ServiceP> = ({doc}) => {
     let data = doc.data();
 
+    var mapurl = 'https://www.google.com/maps/search/?api=1&query=';
+    var addressChange = data.address.replace(/ /g, "+");
+    var cityChange = data.city.replace(/ /g, "+");
+    var stateChange = data.state.replace(/ /g, "+");
+    var revisedURL = mapurl + addressChange + "+" + cityChange + "+" + stateChange;
+
     return(
         <IonItemSliding>
-            <IonItem>
+            <IonItem href={revisedURL}>
                 <IonLabel class="ion-text-wrap">
                     <IonText className="item-title">
                         <div>
