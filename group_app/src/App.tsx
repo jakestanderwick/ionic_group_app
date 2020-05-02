@@ -35,6 +35,7 @@ import './theme/variables.css';
 
 import firebase from 'firebase/app';
 import {GetProcessEnv} from './react-app-env.d';
+import AppOpenAlert from './AppOpenAlert';
 
 export const app = firebase.initializeApp(GetProcessEnv());
 

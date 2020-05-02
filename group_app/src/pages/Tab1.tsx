@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import './Tab1.css';
 import AddService from '../AddService';
 import ServicesList from '../ServicesList';
+import AlertExample, { MapUseAlert } from '../MapUseAlert';
 
 const Home: React.FC = () => {
 
@@ -18,12 +19,10 @@ const Home: React.FC = () => {
       </IonHeader>
       {}
       <IonContent>
-        {
         <IonCard>
           <ServicesList doc={setCurrent}/>
         </IonCard>
-        }
-        
+        <MapUseAlert />
       </IonContent>
     </IonPage>
   );
