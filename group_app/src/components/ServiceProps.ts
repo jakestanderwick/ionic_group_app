@@ -1,6 +1,5 @@
 export default interface ServiceProps{
     service?: string;
-    serviceType?: string;
     description?: string;
     name?: string;
     address?: string;
@@ -8,7 +7,6 @@ export default interface ServiceProps{
     state?: string;
     phone?: string;
     email?: string;
-
     other?: string;
     clear?: any;
 }

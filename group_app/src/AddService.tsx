@@ -8,7 +8,6 @@ import {useCamera} from '@ionic/react-hooks/camera';
 export function debugInfo(logInfo:ServiceProps){
     console.log(
         logInfo.service,
-        logInfo.serviceType, 
         logInfo.description, 
         logInfo.name, 
         logInfo.address, 
@@ -20,7 +19,6 @@ export function debugInfo(logInfo:ServiceProps){
 }
 export function clearInfo(info:ServiceProps){
     info.service='';
-    info.serviceType='';
     info.description='';
     info.name='';
     info.address='';
@@ -35,7 +33,6 @@ export function clearInfo(info:ServiceProps){
 const AddItem: React.FC<ServiceProps> = (props) => {
     const [item, setItem] = useState<ServiceProps>({
         service:'',
-        serviceType:'',
         description:'',
         name:'',
         address:'',
@@ -62,7 +59,7 @@ const AddItem: React.FC<ServiceProps> = (props) => {
         let collectionRef = firebase.firestore().collection("data");
         if (props.service){
             await(collectionRef).doc(props.service).set({
-                service : item.service, serviceType: item.serviceType,
+                service : item.service,
                 description : item.description,
                 name : item.name, address : item.address,
                 city : item.city, state : item.state,
@@ -74,7 +71,7 @@ const AddItem: React.FC<ServiceProps> = (props) => {
         }
         else{
             await collectionRef.add({
-                service : item.service, serviceType: item.serviceType,
+                service : item.service,
                 description : item.description,
                 name : item.name, address : item.address,
                 city : item.city, state : item.state,
@@ -100,14 +97,8 @@ const AddItem: React.FC<ServiceProps> = (props) => {
             <IonCardContent>
           <h2>What Service Is Being Offered?</h2>
             <IonItem>
-              <IonInput placeholder="Title" name="title">
+              <IonInput value={item.service} placeholder="Service Offered" name="service" onIonChange={updateField}>
               </IonInput>
-              <IonSelect value={item.serviceType} placeholder="Service Type" name="serviceType" onIonChange={updateField}>
-              <IonSelectOption value="Food">Food</IonSelectOption>
-              <IonSelectOption value="Housing">Housing</IonSelectOption>
-              <IonSelectOption value="Labor">Labor</IonSelectOption>
-              <IonSelectOption value="Other">Other</IonSelectOption>
-            </IonSelect>
             </IonItem>
             <h2>Please describe the service below.</h2>
             <IonItem>

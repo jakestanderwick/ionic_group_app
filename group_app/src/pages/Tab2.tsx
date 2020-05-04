@@ -10,13 +10,16 @@ const Tab2: React.FC = () => {
 
   const getEmpty = () => {
     return({
-      title: '',
-      content: '',
-      date: '',
-      location: '',
-      picture: '',
-      clear: '',
-      initialValue: ''
+      service:'',
+      serviceType:'',
+      description:'',
+      name:'',
+      address:'',
+      city:'',
+      state:'',
+      phone:'',
+      email:'',
+      other:''
     });
   }
   return (
